@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Car Game</title>
+  </head>
+  <body>
+    <h1>Mashin Oyunu</h1>
+    <h2>Mashini ishe salmaq uchun "d", Dunya turu uchun "w" ve ya tuneuo uchun "t" vurun</h2>
+    <h2>Statistikani </h2>
+
+    <script>
+
+      var car = {
+        make: "Honda",
+        model: "Fit",
+        color: "Blue Raspberry",
+        mileage: 3000,
+        isWorking: true,
+
+        driveToWork: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 8;
+
+          alert("New mileage: " + this.mileage);
+        },
+
+        driveAroundWorld: function() {
+
+          alert("Old Mileage: " + this.mileage);
+
+          this.mileage = this.mileage + 24000;
+
+          alert("New Mileage: " + this.mileage);
+          alert("Car needs a tuneup!");
+
+          this.isWorking = false;
+        },
+
+        getTuneUp: function() {
+          alert("Car is ready to go!");
+          this.isWorking = true;
+        },
+
+        honk: function() {
+          alert("Honk! Honk!");
+        }
+      };
+
+      function reWriteStats() {
+        console.log("Make: " + car.make);
+        console.log("Model: " + car.model);
+        console.log("Color:" + car.color);
+        console.log("Mileage: " + car.mileage);
+        console.log("Is Working: " + car.isWorking);
+        console.log("------------------------------");
+      }
+
+      document.onkeyup = function(event) {
+
+       
+
+        if (letter === "d") {
+          car.driveToWork();
+          reWriteStats();
+        }
+
+        if (letter === "w") {
+          car.driveAroundWorld();
+          reWriteStats();
+        }
+
+        if (letter === "t") {
+          car.getTuneUp();
+          reWriteStats();
+        }
+      };
+    </script>
+    
+  </body>
+</html>
